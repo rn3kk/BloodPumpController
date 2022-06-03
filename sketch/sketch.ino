@@ -6,6 +6,7 @@ const float hear_rate = 60; //in minutes
 
 
 float hear_ms;
+const float pi = 3.141619
 
 void setup() {
   pinMode(pwm_pin, OUTPUT);
@@ -14,6 +15,6 @@ void setup() {
 }
 
 void loop() {  
-  int value = abs(sin( millis() * hear_ms *2 )) * (max_v-min_v) + min_v;
+  int value = abs(sin( millis() * hear_ms * pi )) * (max_v-min_v) + min_v;
   analogWrite(pwm_pin, value);  
 }
